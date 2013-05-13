@@ -1,0 +1,9 @@
+#!/usr/bin/env php
+<?php
+
+require_once 'vendor/autoload.php';
+
+$redis = new Predis\Client();
+
+$sidekiq = new SidekiqJobPusher\Client($redis);
+$sidekiq->perform('TestWorker', array('arg1', 'arg2'));

@@ -1,0 +1,3 @@
+bin/
+vendor/
+.DS_store
